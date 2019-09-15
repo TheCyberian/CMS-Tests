@@ -11,13 +11,13 @@ import java.net.URL;
 public class HttpMethodsForRestService {
 
 	public static void main(String[] args) {
-		String jsonData = "{\"itemName\": \"ItemTestInsert1\"}";
+//		String jsonData = "{\"itemName\": \"ItemTestInsert1\"}";
 //		getURL("http://127.0.0.1:5000/getCustomer");
-		getURL("http://127.0.0.1:5000/getItems");
+//		getURL("http://127.0.0.1:5000/getItems");
 //		postURLAndData("http://127.0.0.1:5000/addItem", jsonData);
 	}
 
-	protected static void getURL(String Url) {
+	public static void getURL(String Url) {
 
 		try {
 
@@ -32,12 +32,18 @@ public class HttpMethodsForRestService {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
-			String output;
-			System.out.println("Output from Server .... \n");
+			StringBuffer response = new StringBuffer();
+			String output = br.readLine();
+			response.append(output);
+			System.out.println("[INFO] Response from Server...");
 			while ((output = br.readLine()) != null) {
-				System.out.println(output);
+//				output = br.readLine();
+//				System.out.println(output);
+				response.append(output);
 			}
-
+			
+//			System.out.println(response);
+			GetterSetters.setResponseJson(response.toString());
 			conn.disconnect();
 
 		} catch (MalformedURLException e) {
@@ -51,7 +57,7 @@ public class HttpMethodsForRestService {
 		}
 	}
 
-	protected static void postURLAndData(String Url, String jsonData) {
+	public static void postURLAndData(String Url, String jsonData) {
 		try {
 
 			URL url = new URL(Url);

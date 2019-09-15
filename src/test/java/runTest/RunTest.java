@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin = {"json:target/cucumber-report/cucumber.json"},
-		tags= {"@GETRequests-Tests"},
+		tags= {"@GetItems, @GetItemsWithItemNumber, @GetCustomers, @GetCustomersWithCustomerId"},
 		features="src/test/resources/cucumberFeatures/", 
 		glue= {"stepDefinition"}
 	)
