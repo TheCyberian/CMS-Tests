@@ -1,0 +1,9 @@
+
+	/*
+	 * http://127.0.0.1:5000/addCustomer http://127.0.0.1:5000/addItem
+	 * http://127.0.0.1:5000/addOrder http://127.0.0.1:5000/getCustomer
+	 * http://127.0.0.1:5000/getCustomer/<customerId> http://127.0.0.1:5000/getItems
+	 * http://127.0.0.1:5000/getItems/<number>
+	 * http://127.0.0.1:5000/getCustomerOrder/<customerId>
+	 * http://127.0.0.1:5000/getItemOrders/<number>
+	 */
